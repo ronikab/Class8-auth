@@ -6,6 +6,7 @@
 <% end %>
 
 <table>
+<% if @current_user != nil %>
   <% for task in @tasks %>
     <tr>
       <td>
@@ -15,5 +16,9 @@
         <%= button_to "Complete", task, :method => "delete" %>
       </td>
     </tr>
+    <% else %>
+    Login first!
   <% end %>
+
+<% end %>
 </table>
